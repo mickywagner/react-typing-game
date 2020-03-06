@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME)
   const [isTimeRunning, setIsTimeRunning] = useState(false)
   const [wordCount, setWordCount] = useState(0)
+  const textBoxRef = useRef(null)
 
   function updateText(e) {
     const { value } = e.target
@@ -25,6 +26,8 @@ function App() {
     setTimeRemaining(STARTING_TIME)
     setWordCount(0)
     setText("")
+    textBoxRef.current.disabled = false
+    textBoxRef.current.focus()
 }
 
 function endGame() {
@@ -52,7 +55,7 @@ function endGame() {
                   value={text}
                   onChange={updateText}
                   disabled={!isTimeRunning}
-                  
+                  ref={textBoxRef}
                 />
             </form>
             <h4>Time remaing: {timeRemaining} seconds</h4>
