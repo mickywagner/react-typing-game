@@ -4,6 +4,8 @@ import './App.css';
 function App() {
   const [ text, setText ] = useState("")
   const [timeRemaining, setTimeRemaining] = useState(10)
+  const [isTimeRunning, setIsTimeRunning] = useState(false)
+  const [wordCount, setWordCount] = useState(0)
 
   function updateText(e) {
     const { value } = e.target
@@ -16,13 +18,23 @@ function App() {
     return wordArray.length
   }
 
+  function startGame() {
+    setIsTimeRunning(true)
+    setTimeRemaining(10)
+    setWordCount(0)
+    setText("")
+}
+
   useEffect(() => {
+    if(isTimeRunning && timeRemaining > 0) {
     setTimeout(() => {
-        if(timeRemaining > 0) {
-            setTimeRemaining(prevState => prevState - 1)
-        }
+            setTimeRemaining(time => time - 1)
     }, 1000)
-}, [timeRemaining])
+    } else {
+      setIsTimeRunning(false)
+      setWordCount(calculateWord(text))
+  }
+}, [timeRemaining, isTimeRunning])
 
   return (
     <div className="App">
@@ -36,8 +48,8 @@ function App() {
                 />
             </form>
             <h4>Time remaing: {timeRemaining} seconds</h4>
-            <button onClick={() => calculateWord(text)}>Start Game</button>
-            <h1>Word Count: 0</h1>
+            <button onClick={() => startGame()}>Start Game</button>
+            <h1>Word Count: {wordCount}</h1>
         </div>
     </div>
   );
