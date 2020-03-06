@@ -33,6 +33,8 @@ h1 {
 
 textarea {
   font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  font-weight: 600;
   border: 3px solid black;
   width: 90%;
   outline: none;
