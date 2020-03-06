@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
+  const STARTING_TIME = 15
+
   const [ text, setText ] = useState("")
-  const [timeRemaining, setTimeRemaining] = useState(10)
+  const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME)
   const [isTimeRunning, setIsTimeRunning] = useState(false)
   const [wordCount, setWordCount] = useState(0)
 
@@ -20,9 +22,14 @@ function App() {
 
   function startGame() {
     setIsTimeRunning(true)
-    setTimeRemaining(10)
+    setTimeRemaining(STARTING_TIME)
     setWordCount(0)
     setText("")
+}
+
+function endGame() {
+  setIsTimeRunning(false)
+  setWordCount(calculateWord(text))
 }
 
   useEffect(() => {
@@ -30,9 +37,8 @@ function App() {
     setTimeout(() => {
             setTimeRemaining(time => time - 1)
     }, 1000)
-    } else {
-      setIsTimeRunning(false)
-      setWordCount(calculateWord(text))
+    } else if(timeRemaining === 0) {
+      endGame()
   }
 }, [timeRemaining, isTimeRunning])
 
@@ -45,10 +51,17 @@ function App() {
                   placeholder="Start typing..."
                   value={text}
                   onChange={updateText}
+                  disabled={!isTimeRunning}
+                  
                 />
             </form>
             <h4>Time remaing: {timeRemaining} seconds</h4>
-            <button onClick={() => startGame()}>Start Game</button>
+            <button 
+              onClick={startGame}
+              disabled={isTimeRunning}
+            >
+              Start Game
+            </button>
             <h1>Word Count: {wordCount}</h1>
         </div>
     </div>
