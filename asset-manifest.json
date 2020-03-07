@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-typing-game/static/css/main.0ab77b13.chunk.css",
+    "main.js": "/react-typing-game/static/js/main.4e3c9078.chunk.js",
+    "main.js.map": "/react-typing-game/static/js/main.4e3c9078.chunk.js.map",
+    "runtime-main.js": "/react-typing-game/static/js/runtime-main.21510c9b.js",
+    "runtime-main.js.map": "/react-typing-game/static/js/runtime-main.21510c9b.js.map",
+    "static/js/2.2b59c952.chunk.js": "/react-typing-game/static/js/2.2b59c952.chunk.js",
+    "static/js/2.2b59c952.chunk.js.map": "/react-typing-game/static/js/2.2b59c952.chunk.js.map",
+    "index.html": "/react-typing-game/index.html",
+    "precache-manifest.9319cae4b53237840c2476d64e70b6ba.js": "/react-typing-game/precache-manifest.9319cae4b53237840c2476d64e70b6ba.js",
+    "service-worker.js": "/react-typing-game/service-worker.js",
+    "static/css/main.0ab77b13.chunk.css.map": "/react-typing-game/static/css/main.0ab77b13.chunk.css.map",
+    "static/js/2.2b59c952.chunk.js.LICENSE.txt": "/react-typing-game/static/js/2.2b59c952.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21510c9b.js",
+    "static/js/2.2b59c952.chunk.js",
+    "static/css/main.0ab77b13.chunk.css",
+    "static/js/main.4e3c9078.chunk.js"
+  ]
+}
