@@ -1,3 +1,23 @@
+<h3>Screenshots</h3>
+<img src="app.gif">
+
+<h3>About This Project</h3>
+<p>This is a React typing game that lets you see how many words you can type per minute. It was one of the projects for the React Bootcamp on Scrimba.
+</p>
+<p>Live version <a href="https://mickywagner.github.io/react-typing-game/">here</a>.</p>
+
+
+<h3>Technical Sheet</h3>
+
+<strong>
+<ul>
+  <li>HTML 5</li>
+  <li>CSS 3</li>
+  <li>React - React Hooks</li>
+</ul>
+</strong>
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
